@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Casa</class>
+ <widget class="QMainWindow" name="Casa">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>430</width>
+    <height>364</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>430</width>
+    <height>364</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>430</width>
+    <height>364</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Casa</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>421</width>
+      <height>337</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="lb_direccion">
+       <property name="text">
+        <string>Direccion</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lb_codigo_postal">
+       <property name="text">
+        <string>Codigo Postal</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lb_pisos">
+       <property name="text">
+        <string>Pisos</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lb_metros_cuadrados">
+       <property name="text">
+        <string>Metros Cuadrados</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lb_dormitorios">
+       <property name="text">
+        <string>Dormitorios</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lb_banios">
+       <property name="text">
+        <string>Baños</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="lb_amueblada">
+       <property name="text">
+        <string>Amueblada</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="lb_habitada">
+       <property name="text">
+        <string>Habitada</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="lb_precio_ars">
+       <property name="text">
+        <string>Precio ARS</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="lb_precio_uds">
+       <property name="text">
+        <string>Precio UDS</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="lb_imagenes">
+       <property name="text">
+        <string>Imagenes</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="le_direccion"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="le_codigo_postal"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="le_metros_cuadrados"/>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="le_precio_ars"/>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="le_precio_uds"/>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLineEdit" name="le_imagenes"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="cb_pisos"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="cb_dormitorios"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="cb_banios"/>
+     </item>
+     <item row="6" column="1">
+      <widget class="QComboBox" name="cb_amueblada"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="QComboBox" name="cb_habitada"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

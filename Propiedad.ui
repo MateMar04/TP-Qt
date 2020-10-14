@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Propiedad</class>
+ <widget class="QMainWindow" name="Propiedad">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>497</width>
+    <height>179</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>497</width>
+    <height>179</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>497</width>
+    <height>179</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Propiedad</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>491</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pb_departamento">
+       <property name="text">
+        <string>Departamento</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_casa">
+       <property name="text">
+        <string>Casa</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>261</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>¿Qué tipo de propiedad desea añadir?</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pb_casa</sender>
+   <signal>clicked()</signal>
+   <receiver>Propiedad</receiver>
+   <slot>casa_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>371</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>369</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_departamento</sender>
+   <signal>clicked()</signal>
+   <receiver>Propiedad</receiver>
+   <slot>departamento_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>departamento_slot()</slot>
+  <slot>casa_slot()</slot>
+ </slots>
+</ui>

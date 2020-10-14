@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Departamento</class>
+ <widget class="QMainWindow" name="Departamento">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>514</width>
+    <height>426</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>514</width>
+    <height>426</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>514</width>
+    <height>426</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>511</width>
+      <height>368</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="lb_direccion">
+       <property name="text">
+        <string>Direccion</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lb_piso">
+       <property name="text">
+        <string>Piso</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lb__n_departamento">
+       <property name="text">
+        <string>N° Departamento</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lb_codigo_postal">
+       <property name="text">
+        <string>Codigo Postal</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lb_metros">
+       <property name="text">
+        <string>Metros Cuadrados</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lb_ambientes">
+       <property name="text">
+        <string>N° Ambientes</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="lb_dormitorios">
+       <property name="text">
+        <string>N° Dormitorios</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="lb_amueblado">
+       <property name="text">
+        <string>Amueblado</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="lb_habitado">
+       <property name="text">
+        <string>Habitado</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="lb_precios_ars">
+       <property name="text">
+        <string>Precio ARS</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="lb_precios_uds">
+       <property name="text">
+        <string>Precio UDS</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="lb_imagenes">
+       <property name="text">
+        <string>Imagenes (Ingrese URL)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QComboBox" name="cb_habitado">
+       <item>
+        <property name="text">
+         <string>No</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Si</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QComboBox" name="cb_amueblado">
+       <item>
+        <property name="text">
+         <string>No</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Si</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="cb_ambientes">
+       <item>
+        <property name="text">
+         <string>Monoambiente</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QComboBox" name="cb_dormitorios">
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="le_direccion"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="le_piso">
+       <property name="inputMask">
+        <string>99</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="le_n_departamento">
+       <property name="inputMask">
+        <string>99</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="le_codigo_postal">
+       <property name="inputMask">
+        <string>9999</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="le_metros_cuadrados">
+       <property name="inputMask">
+        <string>999</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="le_precio_ars">
+       <property name="inputMask">
+        <string>99999999</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLineEdit" name="le_precios_uds">
+       <property name="inputMask">
+        <string>99999</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QLineEdit" name="le_imagenes"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

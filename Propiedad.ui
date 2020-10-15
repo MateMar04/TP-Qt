@@ -50,6 +50,13 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pb_lista">
+       <property name="text">
+        <string>Lista</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QLabel" name="label">
@@ -77,8 +84,8 @@
    <slot>casa_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>371</x>
-     <y>104</y>
+     <x>324</x>
+     <y>111</y>
     </hint>
     <hint type="destinationlabel">
      <x>369</x>
@@ -93,8 +100,8 @@
    <slot>departamento_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>173</x>
-     <y>105</y>
+     <x>159</x>
+     <y>111</y>
     </hint>
     <hint type="destinationlabel">
      <x>163</x>
@@ -102,9 +109,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pb_lista</sender>
+   <signal>clicked()</signal>
+   <receiver>Propiedad</receiver>
+   <slot>lista_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>480</x>
+     <y>122</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>departamento_slot()</slot>
   <slot>casa_slot()</slot>
+  <slot>lista_slot()</slot>
  </slots>
 </ui>

@@ -19,6 +19,10 @@ class MainWindow(QMainWindow):
     def departamento_slot(self):
         pass
 
+    @Slot()
+    def lista_slot(self):
+        pass
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

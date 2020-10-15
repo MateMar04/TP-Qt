@@ -41,6 +41,11 @@ class Ui_Propiedad(object):
 
         self.horizontalLayout.addWidget(self.pb_casa)
 
+        self.pb_lista = QPushButton(self.horizontalLayoutWidget)
+        self.pb_lista.setObjectName(u"pb_lista")
+
+        self.horizontalLayout.addWidget(self.pb_lista)
+
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(130, 20, 261, 20))
@@ -60,6 +65,7 @@ class Ui_Propiedad(object):
         Propiedad.setWindowTitle(QCoreApplication.translate("Propiedad", u"Propiedad", None))
         self.pb_departamento.setText(QCoreApplication.translate("Propiedad", u"Departamento", None))
         self.pb_casa.setText(QCoreApplication.translate("Propiedad", u"Casa", None))
+        self.pb_lista.setText(QCoreApplication.translate("Propiedad", u"Lista", None))
         self.label.setText(QCoreApplication.translate("Propiedad", u"\u00bfQu\u00e9 tipo de propiedad desea a\u00f1adir?", None))
     # retranslateUi
 

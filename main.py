@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def casa_slot(self):
-        pass
+        print("hola")
 
     @Slot()
     def departamento_slot(self):

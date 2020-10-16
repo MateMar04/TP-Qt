@@ -17,10 +17,12 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def departamento_slot(self):
+        print("Soy Mateo")
         pass
 
     @Slot()
     def lista_slot(self):
+        print("puto el que lee")
         pass
 
 

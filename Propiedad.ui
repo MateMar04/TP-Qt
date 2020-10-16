@@ -116,12 +116,12 @@
    <slot>lista_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>416</x>
-     <y>104</y>
+     <x>424</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>480</x>
-     <y>122</y>
+     <x>432</x>
+     <y>68</y>
     </hint>
    </hints>
   </connection>

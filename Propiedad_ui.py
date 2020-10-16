@@ -57,6 +57,7 @@ class Ui_Propiedad(object):
         self.retranslateUi(Propiedad)
         self.pb_casa.clicked.connect(Propiedad.casa_slot)
         self.pb_departamento.clicked.connect(Propiedad.departamento_slot)
+        self.pb_lista.clicked.connect(Propiedad.lista_slot)
 
         QMetaObject.connectSlotsByName(Propiedad)
     # setupUi

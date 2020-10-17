@@ -246,9 +246,42 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pb_volver">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>380</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Volver</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pb_volver</sender>
+   <signal>clicked()</signal>
+   <receiver>Departamento</receiver>
+   <slot>volver_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>443</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>volver_slot()</slot>
+ </slots>
 </ui>

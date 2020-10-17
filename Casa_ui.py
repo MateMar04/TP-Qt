@@ -20,9 +20,9 @@ class Ui_Casa(object):
     def setupUi(self, Casa):
         if not Casa.objectName():
             Casa.setObjectName(u"Casa")
-        Casa.resize(430, 364)
-        Casa.setMinimumSize(QSize(430, 364))
-        Casa.setMaximumSize(QSize(430, 364))
+        Casa.resize(430, 389)
+        Casa.setMinimumSize(QSize(430, 389))
+        Casa.setMaximumSize(QSize(430, 389))
         self.centralwidget = QWidget(Casa)
         self.centralwidget.setObjectName(u"centralwidget")
         self.formLayoutWidget = QWidget(self.centralwidget)
@@ -141,12 +141,17 @@ class Ui_Casa(object):
 
         self.formLayout.setWidget(7, QFormLayout.FieldRole, self.cb_habitada)
 
+        self.pb_volver = QPushButton(self.centralwidget)
+        self.pb_volver.setObjectName(u"pb_volver")
+        self.pb_volver.setGeometry(QRect(330, 340, 89, 25))
+        self.pb_volver.setMaximumSize(QSize(330, 340))
         Casa.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Casa)
         self.statusbar.setObjectName(u"statusbar")
         Casa.setStatusBar(self.statusbar)
 
         self.retranslateUi(Casa)
+        self.pb_volver.clicked.connect(Casa.volver_slot)
 
         QMetaObject.connectSlotsByName(Casa)
     # setupUi
@@ -164,5 +169,6 @@ class Ui_Casa(object):
         self.lb_precio_ars.setText(QCoreApplication.translate("Casa", u"Precio ARS", None))
         self.lb_precio_uds.setText(QCoreApplication.translate("Casa", u"Precio UDS", None))
         self.lb_imagenes.setText(QCoreApplication.translate("Casa", u"Imagenes", None))
+        self.pb_volver.setText(QCoreApplication.translate("Casa", u"Volver", None))
     # retranslateUi
 

@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>430</width>
-    <height>364</height>
+    <height>389</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>430</width>
-    <height>364</height>
+    <height>389</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>430</width>
-    <height>364</height>
+    <height>389</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -148,9 +148,48 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pb_volver">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>340</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>330</width>
+      <height>340</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Volver</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pb_volver</sender>
+   <signal>clicked()</signal>
+   <receiver>Casa</receiver>
+   <slot>volver_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>391</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>volver_slot()</slot>
+ </slots>
 </ui>

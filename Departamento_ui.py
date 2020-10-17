@@ -163,12 +163,16 @@ class Ui_Departamento(object):
 
         self.formLayout.setWidget(11, QFormLayout.FieldRole, self.le_imagenes)
 
+        self.pb_volver = QPushButton(self.centralwidget)
+        self.pb_volver.setObjectName(u"pb_volver")
+        self.pb_volver.setGeometry(QRect(400, 380, 101, 25))
         Departamento.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(Departamento)
         self.statusbar.setObjectName(u"statusbar")
         Departamento.setStatusBar(self.statusbar)
 
         self.retranslateUi(Departamento)
+        self.pb_volver.clicked.connect(Departamento.volver_slot)
 
         QMetaObject.connectSlotsByName(Departamento)
     # setupUi
@@ -209,5 +213,6 @@ class Ui_Departamento(object):
         self.le_metros_cuadrados.setInputMask(QCoreApplication.translate("Departamento", u"999", None))
         self.le_precio_ars.setInputMask(QCoreApplication.translate("Departamento", u"99999999", None))
         self.le_precios_uds.setInputMask(QCoreApplication.translate("Departamento", u"99999", None))
+        self.pb_volver.setText(QCoreApplication.translate("Departamento", u"Volver", None))
     # retranslateUi
 

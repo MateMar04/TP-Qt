@@ -157,7 +157,7 @@
       <x>20</x>
       <y>0</y>
       <width>131</width>
-      <height>471</height>
+      <height>431</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -176,6 +176,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pb_volver">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>440</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Volver</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -197,5 +210,25 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pb_volver</sender>
+   <signal>clicked()</signal>
+   <receiver>Lista</receiver>
+   <slot>volver_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>84</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>482</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>volver_slot()</slot>
+ </slots>
 </ui>

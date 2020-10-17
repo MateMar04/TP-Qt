@@ -89,7 +89,7 @@ class Ui_Lista(object):
 
         self.verticalLayoutWidget_2 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(20, 0, 131, 471))
+        self.verticalLayoutWidget_2.setGeometry(QRect(20, 0, 131, 431))
         self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -103,6 +103,9 @@ class Ui_Lista(object):
 
         self.verticalLayout_2.addWidget(self.lb_casas)
 
+        self.pb_volver = QPushButton(self.centralwidget)
+        self.pb_volver.setObjectName(u"pb_volver")
+        self.pb_volver.setGeometry(QRect(50, 440, 89, 25))
         Lista.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(Lista)
         self.menubar.setObjectName(u"menubar")
@@ -117,6 +120,7 @@ class Ui_Lista(object):
         self.menubar.addAction(self.menuOrdenar.menuAction())
 
         self.retranslateUi(Lista)
+        self.pb_volver.clicked.connect(Lista.volver_slot)
 
         QMetaObject.connectSlotsByName(Lista)
     # setupUi
@@ -167,6 +171,7 @@ class Ui_Lista(object):
         ___qtablewidgetitem20.setText(QCoreApplication.translate("Lista", u"Precio UDS", None));
         self.lb_departamentos.setText(QCoreApplication.translate("Lista", u"Departamentos", None))
         self.lb_casas.setText(QCoreApplication.translate("Lista", u"Casas", None))
+        self.pb_volver.setText(QCoreApplication.translate("Lista", u"Volver", None))
         self.menuOrdenar.setTitle(QCoreApplication.translate("Lista", u"Ordenar", None))
     # retranslateUi
 

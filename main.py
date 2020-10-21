@@ -105,10 +105,6 @@ class MainWindow(QMainWindow):
         self.ui.le_precio_uds.setText("")
         self.ui.le_imagenes.setText("")
 
-    @Slot()
-    def registrar_slot(self):
-        pass
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

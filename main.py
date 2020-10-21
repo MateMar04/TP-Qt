@@ -17,7 +17,6 @@ class MainWindow(QMainWindow):
         self.list_window = ListWindow()
         self.house_window = HouseWindow()
         self.flat_window = FlatWindow()
-        self.hola = 0
 
     @Slot()
     def casa_slot(self):

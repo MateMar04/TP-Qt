@@ -2,33 +2,40 @@ import sys
 from PySide2.QtWidgets import QApplication, QMainWindow
 from PySide2.QtCore import Slot
 
-from Propiedad_ui import Ui_Propiedad
-
+from Propiedades_ui import Ui_MainWindow
 from ventana_lista import ListWindow
-from ventana_casa import HouseWindow
-from ventana_departamento import FlatWindow
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.ui = Ui_Propiedad()
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.list_window = ListWindow()
-        self.house_window = HouseWindow()
-        self.flat_window = FlatWindow()
+        self.all = [self.ui.le_direccion, self.ui.le_codigo_postal, self.ui.le_metros_cuadrados, self.ui.le_cant_pisos,
+                    self.ui.le_nro_piso, self.ui.le_nro_departamento, self.ui.le_nro_ambientes,
+                    self.ui.le_nro_dormitorios, self.ui.le_nro_banios, self.ui.cb_amueblado, self.ui.cb_habitado,
+                    self.ui.le_precio_ars, self.ui.le_precio_uds, self.ui.le_imagenes]
 
-    @Slot()
-    def casa_slot(self):
-        self.house_window.show()
+        self.toggle_inputs(self.all, False)
 
-    @Slot()
-    def departamento_slot(self):
-        self.flat_window.show()
+    def toggle_inputs(self, input, state):
+        for i in input:
+            i.setEnabled(state)
 
     @Slot()
     def lista_slot(self):
         self.list_window.show()
+
+    @Slot()
+    def casa_slot(self):
+        self.toggle_inputs(self.all, True)
+        self.toggle_inputs([self.ui.le_nro_departamento, self.ui.le_nro_piso], False)
+
+    @Slot()
+    def departamento_slot(self):
+        self.toggle_inputs(self.all, True)
+        self.toggle_inputs([self.ui.le_codigo_postal, self.ui.le_precio_ars], False)
 
 
 if __name__ == "__main__":

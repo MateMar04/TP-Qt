@@ -90,10 +90,6 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def borrar_todo_slot(self):
-        pass
-
-    @Slot()
-    def borrar_todo_slot(self):
         self.ui.le_direccion.setText("")
         self.ui.le_codigo_postal.setText("")
         self.ui.le_metros_cuadrados.setText("")

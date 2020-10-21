@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(574, 548)
+        MainWindow.resize(574, 606)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.horizontalLayoutWidget = QWidget(self.centralwidget)
@@ -29,15 +29,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_2 = QPushButton(self.horizontalLayoutWidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pb_departamento = QPushButton(self.horizontalLayoutWidget)
+        self.pb_departamento.setObjectName(u"pb_departamento")
 
-        self.horizontalLayout.addWidget(self.pushButton_2)
+        self.horizontalLayout.addWidget(self.pb_departamento)
 
-        self.pushButton = QPushButton(self.horizontalLayoutWidget)
-        self.pushButton.setObjectName(u"pushButton")
+        self.pb_casa = QPushButton(self.horizontalLayoutWidget)
+        self.pb_casa.setObjectName(u"pb_casa")
 
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.horizontalLayout.addWidget(self.pb_casa)
 
         self.pb_lista = QPushButton(self.horizontalLayoutWidget)
         self.pb_lista.setObjectName(u"pb_lista")
@@ -197,6 +197,22 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(160, 10, 271, 20))
+        self.horizontalLayoutWidget_2 = QWidget(self.centralwidget)
+        self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
+        self.horizontalLayoutWidget_2.setGeometry(QRect(10, 520, 561, 51))
+        self.horizontalLayout_2 = QHBoxLayout(self.horizontalLayoutWidget_2)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.pb_registrar = QPushButton(self.horizontalLayoutWidget_2)
+        self.pb_registrar.setObjectName(u"pb_registrar")
+
+        self.horizontalLayout_2.addWidget(self.pb_registrar)
+
+        self.pb_borrar_todo = QPushButton(self.horizontalLayoutWidget_2)
+        self.pb_borrar_todo.setObjectName(u"pb_borrar_todo")
+
+        self.horizontalLayout_2.addWidget(self.pb_borrar_todo)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -204,16 +220,18 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.pb_lista.clicked.connect(MainWindow.lista_slot)
-        self.pushButton_2.clicked.connect(MainWindow.departamento_slot)
-        self.pushButton.clicked.connect(MainWindow.casa_slot)
+        self.pb_departamento.clicked.connect(MainWindow.departamento_slot)
+        self.pb_casa.clicked.connect(MainWindow.casa_slot)
+        self.pb_registrar.clicked.connect(MainWindow.registrar_slot)
+        self.pb_borrar_todo.clicked.connect(MainWindow.borrar_todo_slot)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Propiedades", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Departamento", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Casa", None))
+        self.pb_departamento.setText(QCoreApplication.translate("MainWindow", u"Departamento", None))
+        self.pb_casa.setText(QCoreApplication.translate("MainWindow", u"Casa", None))
         self.pb_lista.setText(QCoreApplication.translate("MainWindow", u"Lista", None))
         self.lb_direccion.setText(QCoreApplication.translate("MainWindow", u"Direccion", None))
         self.lb_metros_cuadrados.setText(QCoreApplication.translate("MainWindow", u"Metros Cuadrados", None))
@@ -229,6 +247,17 @@ class Ui_MainWindow(object):
         self.lb_precio_ars.setText(QCoreApplication.translate("MainWindow", u"Precio ARS", None))
         self.lb_precio_uds.setText(QCoreApplication.translate("MainWindow", u"Precio UDS", None))
         self.lb_imagenes.setText(QCoreApplication.translate("MainWindow", u"Imagenes (URL)", None))
+        self.le_direccion.setInputMask("")
+        self.le_codigo_postal.setInputMask(QCoreApplication.translate("MainWindow", u"9999", None))
+        self.le_metros_cuadrados.setInputMask(QCoreApplication.translate("MainWindow", u"999", None))
+        self.le_cant_pisos.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
+        self.le_nro_piso.setInputMask(QCoreApplication.translate("MainWindow", u"99", None))
+        self.le_nro_departamento.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
+        self.le_nro_ambientes.setInputMask(QCoreApplication.translate("MainWindow", u"99", None))
+        self.le_nro_dormitorios.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
+        self.le_nro_banios.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
+        self.le_precio_ars.setInputMask(QCoreApplication.translate("MainWindow", u"99.999.999", None))
+        self.le_precio_uds.setInputMask(QCoreApplication.translate("MainWindow", u"999.999", None))
         self.cb_amueblado.setItemText(0, QCoreApplication.translate("MainWindow", u"Si", None))
         self.cb_amueblado.setItemText(1, QCoreApplication.translate("MainWindow", u"No", None))
 
@@ -236,5 +265,7 @@ class Ui_MainWindow(object):
         self.cb_habitado.setItemText(1, QCoreApplication.translate("MainWindow", u"No", None))
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u00bfQue tipo de propiedad desea agregar?", None))
+        self.pb_registrar.setText(QCoreApplication.translate("MainWindow", u"Registrar", None))
+        self.pb_borrar_todo.setText(QCoreApplication.translate("MainWindow", u"Borrar Todo", None))
     # retranslateUi
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>574</width>
-    <height>548</height>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,14 +25,14 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pb_departamento">
        <property name="text">
         <string>Departamento</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pb_casa">
        <property name="text">
         <string>Casa</string>
        </property>
@@ -156,37 +156,81 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="le_direccion"/>
+      <widget class="QLineEdit" name="le_direccion">
+       <property name="inputMask">
+        <string/>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="le_codigo_postal"/>
+      <widget class="QLineEdit" name="le_codigo_postal">
+       <property name="inputMask">
+        <string>9999</string>
+       </property>
+      </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="le_metros_cuadrados"/>
+      <widget class="QLineEdit" name="le_metros_cuadrados">
+       <property name="inputMask">
+        <string>999</string>
+       </property>
+      </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="le_cant_pisos"/>
+      <widget class="QLineEdit" name="le_cant_pisos">
+       <property name="inputMask">
+        <string>9</string>
+       </property>
+      </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLineEdit" name="le_nro_piso"/>
+      <widget class="QLineEdit" name="le_nro_piso">
+       <property name="inputMask">
+        <string>99</string>
+       </property>
+      </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLineEdit" name="le_nro_departamento"/>
+      <widget class="QLineEdit" name="le_nro_departamento">
+       <property name="inputMask">
+        <string>9</string>
+       </property>
+      </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QLineEdit" name="le_nro_ambientes"/>
+      <widget class="QLineEdit" name="le_nro_ambientes">
+       <property name="inputMask">
+        <string>99</string>
+       </property>
+      </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QLineEdit" name="le_nro_dormitorios"/>
+      <widget class="QLineEdit" name="le_nro_dormitorios">
+       <property name="inputMask">
+        <string>9</string>
+       </property>
+      </widget>
      </item>
      <item row="8" column="1">
-      <widget class="QLineEdit" name="le_nro_banios"/>
+      <widget class="QLineEdit" name="le_nro_banios">
+       <property name="inputMask">
+        <string>9</string>
+       </property>
+      </widget>
      </item>
      <item row="11" column="1">
-      <widget class="QLineEdit" name="le_precio_ars"/>
+      <widget class="QLineEdit" name="le_precio_ars">
+       <property name="inputMask">
+        <string>99.999.999</string>
+       </property>
+      </widget>
      </item>
      <item row="12" column="1">
-      <widget class="QLineEdit" name="le_precio_uds"/>
+      <widget class="QLineEdit" name="le_precio_uds">
+       <property name="inputMask">
+        <string>999.999</string>
+       </property>
+      </widget>
      </item>
      <item row="13" column="1">
       <widget class="QLineEdit" name="le_imagenes"/>
@@ -234,6 +278,32 @@
      <string>¿Que tipo de propiedad desea agregar?</string>
     </property>
    </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>520</y>
+      <width>561</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pb_registrar">
+       <property name="text">
+        <string>Registrar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_borrar_todo">
+       <property name="text">
+        <string>Borrar Todo</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
@@ -256,7 +326,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>pb_departamento</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>departamento_slot()</slot>
@@ -272,7 +342,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pb_casa</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>casa_slot()</slot>
@@ -287,10 +357,44 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pb_registrar</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>registrar_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>209</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>577</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_borrar_todo</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>borrar_todo_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>362</x>
+     <y>564</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>579</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>lista_slot()</slot>
   <slot>casa_slot()</slot>
   <slot>departamento_slot()</slot>
+  <slot>registrar_slot()</slot>
+  <slot>borrar_todo_slot()</slot>
  </slots>
 </ui>

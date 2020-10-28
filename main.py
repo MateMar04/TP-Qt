@@ -1,4 +1,5 @@
 import sys
+import requests
 from PySide2.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PySide2.QtCore import Slot
 
@@ -23,6 +24,21 @@ class MainWindow(QMainWindow):
         self.casas = []
 
         self.toggle_inputs(self.all, False)
+        print(self.init_dolar())
+
+    def init_dolar(self):
+        self.url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
+        self.payload = {}
+        self.headers = {}
+        self.response = requests.get(self.url, headers=self.headers, data=self.payload).json()
+
+        for i, item in enumerate(self.response):
+            self.casa = item["casa"]
+            self.nombre = self.casa["nombre"]
+            if self.nombre == "Dolar Oficial":
+                self.dolar_turista = self.casa["venta"]
+                return float(self.dolar_turista.replace(",", "."))
+        return 0
 
     def toggle_inputs(self, input, state):
         for i in input:

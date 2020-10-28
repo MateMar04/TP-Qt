@@ -1,7 +1,5 @@
 import math
-
 import sys
-
 import requests
 
 from PySide2.QtWidgets import QApplication, QMainWindow, QMessageBox
@@ -33,7 +31,7 @@ class MainWindow(QMainWindow):
         self.toggle_inputs(self.all, False)
 
         self.dolar = self.init_dolar()
-        print(self.dolar)
+        self.ui.le_precio_uds.setReadOnly(True)
 
     def init_dolar(self):
         self.url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"
@@ -49,9 +47,23 @@ class MainWindow(QMainWindow):
                 return float(self.dolar_oficial.replace(",", "."))
         return 0
 
+    def update_dolar(self):
+        if self.ui.le_precio_ars.isModified():
+            self.ui.le_precio_uds.setText(str(math.trunc(int(self.ui.le_precio_ars.text()) / self.dolar)))
+
+
     def toggle_inputs(self, input, state):
         for i in input:
             i.setEnabled(state)
+
+
+    @Slot()
+    def peso_change_slot(self):
+        if len(self.ui.le_precio_ars.text()) > 0:
+            self.ui.le_precio_uds.setText(str(round((int(self.ui.le_precio_ars.text()) / self.dolar), 2)))
+        else:
+            self.ui.le_precio_uds.setText("0")
+
 
     @Slot()
     def lista_slot(self):
@@ -81,7 +93,7 @@ class MainWindow(QMainWindow):
             self.ui.cb_amueblado.currentText(),
             self.ui.cb_habitado.currentText(),
             self.ui.le_precio_ars.text(),
-            self.ui.le_precio_uds.setText(str(math.trunc(int(self.ui.le_precio_ars.text())/self.dolar))),
+            self.ui.le_precio_uds.text()
         )
 
         casa = Casa(

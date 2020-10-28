@@ -224,6 +224,7 @@ class Ui_MainWindow(object):
         self.pb_casa.clicked.connect(MainWindow.casa_slot)
         self.pb_registrar.clicked.connect(MainWindow.registrar_slot)
         self.pb_borrar_todo.clicked.connect(MainWindow.borrar_todo_slot)
+        self.le_precio_ars.textChanged.connect(MainWindow.peso_change_slot)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -256,8 +257,8 @@ class Ui_MainWindow(object):
         self.le_nro_ambientes.setInputMask(QCoreApplication.translate("MainWindow", u"99", None))
         self.le_nro_dormitorios.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
         self.le_nro_banios.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
-        self.le_precio_ars.setInputMask(QCoreApplication.translate("MainWindow", u"99999999", None))
-        self.le_precio_uds.setInputMask(QCoreApplication.translate("MainWindow", u"999999", None))
+        self.le_precio_ars.setInputMask(QCoreApplication.translate("MainWindow", u"########", None))
+        self.le_precio_uds.setInputMask("")
         self.cb_amueblado.setItemText(0, QCoreApplication.translate("MainWindow", u"Si", None))
         self.cb_amueblado.setItemText(1, QCoreApplication.translate("MainWindow", u"No", None))
 

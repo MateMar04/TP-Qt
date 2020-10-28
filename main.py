@@ -51,11 +51,9 @@ class MainWindow(QMainWindow):
         if self.ui.le_precio_ars.isModified():
             self.ui.le_precio_uds.setText(str(math.trunc(int(self.ui.le_precio_ars.text()) / self.dolar)))
 
-
     def toggle_inputs(self, input, state):
         for i in input:
             i.setEnabled(state)
-
 
     @Slot()
     def peso_change_slot(self):
@@ -63,7 +61,6 @@ class MainWindow(QMainWindow):
             self.ui.le_precio_uds.setText(str(round((int(self.ui.le_precio_ars.text()) / self.dolar), 2)))
         else:
             self.ui.le_precio_uds.setText("0")
-
 
     @Slot()
     def lista_slot(self):

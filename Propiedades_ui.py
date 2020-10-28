@@ -256,8 +256,8 @@ class Ui_MainWindow(object):
         self.le_nro_ambientes.setInputMask(QCoreApplication.translate("MainWindow", u"99", None))
         self.le_nro_dormitorios.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
         self.le_nro_banios.setInputMask(QCoreApplication.translate("MainWindow", u"9", None))
-        self.le_precio_ars.setInputMask(QCoreApplication.translate("MainWindow", u"99.999.999", None))
-        self.le_precio_uds.setInputMask(QCoreApplication.translate("MainWindow", u"999.999", None))
+        self.le_precio_ars.setInputMask(QCoreApplication.translate("MainWindow", u"99999999", None))
+        self.le_precio_uds.setInputMask(QCoreApplication.translate("MainWindow", u"999999", None))
         self.cb_amueblado.setItemText(0, QCoreApplication.translate("MainWindow", u"Si", None))
         self.cb_amueblado.setItemText(1, QCoreApplication.translate("MainWindow", u"No", None))
 

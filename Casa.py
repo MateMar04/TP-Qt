@@ -17,4 +17,4 @@ class Casa:
     def is_empty_h(self):
         return self.direccion == "" or self.codigo_postal == "" or self.m2 == "" or self.cant_pisos == "" or \
                self.nro_ambientes == "" or self.nro_dormitorios == "" or self.nro_banios == "" or self.precio_ars == \
-               ".." or self.precio_uds == "."
+               ""

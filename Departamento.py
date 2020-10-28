@@ -17,5 +17,5 @@ class Departamento:
 
     def is_empty_f(self):
         return self.direccion == "" or self.codigo_postal == "" or self.m2 == "" or self.nro_piso == "" \
-               or self.nro_depto == "" or self.nro_ambientes == "" or self.nro_dormitorios == "" or self.nro_banios == "" or self.precio_ars == \
-               ".." or self.precio_uds == "."
+               or self.nro_depto == "" or self.nro_ambientes == "" or self.nro_dormitorios == "" or self.nro_banios == \
+                "" or self.precio_ars == ""

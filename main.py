@@ -112,9 +112,6 @@ class MainWindow(QMainWindow):
                 self.casas.append(casa)
                 self.borrar_todo_slot()
 
-                if self.list_window.isHidden():
-                    self.list_window.show()
-
             if self.list_window.isHidden():
                 self.list_window.show()
 

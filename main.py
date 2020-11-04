@@ -47,10 +47,6 @@ class MainWindow(QMainWindow):
                 return float(self.dolar_oficial.replace(",", "."))
         return 0
 
-    def update_dolar(self):
-        if self.ui.le_precio_ars.isModified():
-            self.ui.le_precio_uds.setText(str(math.trunc(int(self.ui.le_precio_ars.text()) / self.dolar)))
-
     def toggle_inputs(self, input, state):
         for i in input:
             i.setEnabled(state)

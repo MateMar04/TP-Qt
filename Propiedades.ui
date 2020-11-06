@@ -38,13 +38,6 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="pb_lista">
-       <property name="text">
-        <string>Lista</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
@@ -164,6 +157,9 @@
      </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="le_codigo_postal">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
        <property name="inputMask">
         <string>9999</string>
        </property>
@@ -310,54 +306,6 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pb_lista</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>lista_slot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>565</x>
-     <y>48</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>439</x>
-     <y>12</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pb_departamento</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>departamento_slot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>107</x>
-     <y>61</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>46</x>
-     <y>36</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pb_casa</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>casa_slot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>233</x>
-     <y>58</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>186</x>
-     <y>42</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>pb_registrar</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
@@ -402,6 +350,38 @@
     <hint type="destinationlabel">
      <x>135</x>
      <y>442</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_departamento</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>departamento_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>46</x>
+     <y>36</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_casa</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>casa_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>517</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>42</y>
     </hint>
    </hints>
   </connection>

@@ -1,5 +1,6 @@
 import sys
 import requests
+import pickle
 
 from PySide2.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PySide2.QtCore import Slot
@@ -24,8 +25,7 @@ class MainWindow(QMainWindow):
                     self.ui.le_nro_dormitorios, self.ui.le_nro_banios, self.ui.cb_amueblado, self.ui.cb_habitado,
                     self.ui.le_precio_ars, self.ui.le_precio_uds, self.ui.le_imagenes, self.ui.pb_registrar]
 
-        self.departamentos = []
-        self.casas = []
+        self.propiedades = []
 
         self.toggle_inputs(self.all, False)
 
@@ -99,11 +99,13 @@ class MainWindow(QMainWindow):
         )
 
         if not departamento.is_empty_f():
-            self.departamentos.append(departamento)
+            self.propiedades.append(departamento)
+            self.save_file()
             self.borrar_todo_slot()
 
             if not casa.is_empty_h():
-                self.casas.append(casa)
+                self.propiedades.append(casa)
+                self.save_file()
                 self.borrar_todo_slot()
 
             if self.list_window.isHidden():
@@ -128,6 +130,18 @@ class MainWindow(QMainWindow):
         self.ui.le_precio_ars.setText("")
         self.ui.le_precio_uds.setText("")
         self.ui.le_imagenes.setText("")
+
+    def save_file(self):
+        with open("propiedades.v", "wb") as file:
+            pickle.dump(self.propiedades, file)
+
+    def read_file(self):
+        try:
+            with open("propiedades.v", "rb") as file:
+                propiedades = pickle.load(file)
+        except FileNotFoundError:
+            propiedades = []
+        return propiedades
 
 
 if __name__ == "__main__":

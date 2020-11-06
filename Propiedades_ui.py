@@ -39,11 +39,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.pb_casa)
 
-        self.pb_lista = QPushButton(self.horizontalLayoutWidget)
-        self.pb_lista.setObjectName(u"pb_lista")
-
-        self.horizontalLayout.addWidget(self.pb_lista)
-
         self.formLayoutWidget = QWidget(self.centralwidget)
         self.formLayoutWidget.setObjectName(u"formLayoutWidget")
         self.formLayoutWidget.setGeometry(QRect(10, 90, 561, 436))
@@ -127,6 +122,7 @@ class Ui_MainWindow(object):
 
         self.le_codigo_postal = QLineEdit(self.formLayoutWidget)
         self.le_codigo_postal.setObjectName(u"le_codigo_postal")
+        self.le_codigo_postal.setLayoutDirection(Qt.LeftToRight)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.le_codigo_postal)
 
@@ -219,12 +215,11 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.pb_lista.clicked.connect(MainWindow.lista_slot)
-        self.pb_departamento.clicked.connect(MainWindow.departamento_slot)
-        self.pb_casa.clicked.connect(MainWindow.casa_slot)
         self.pb_registrar.clicked.connect(MainWindow.registrar_slot)
         self.pb_borrar_todo.clicked.connect(MainWindow.borrar_todo_slot)
         self.le_precio_ars.textChanged.connect(MainWindow.peso_change_slot)
+        self.pb_departamento.clicked.connect(MainWindow.departamento_slot)
+        self.pb_casa.clicked.connect(MainWindow.casa_slot)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -233,7 +228,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Propiedades", None))
         self.pb_departamento.setText(QCoreApplication.translate("MainWindow", u"Departamento", None))
         self.pb_casa.setText(QCoreApplication.translate("MainWindow", u"Casa", None))
-        self.pb_lista.setText(QCoreApplication.translate("MainWindow", u"Lista", None))
         self.lb_direccion.setText(QCoreApplication.translate("MainWindow", u"Direccion", None))
         self.lb_metros_cuadrados.setText(QCoreApplication.translate("MainWindow", u"Metros Cuadrados", None))
         self.lb_cant_piso.setText(QCoreApplication.translate("MainWindow", u"Cantidad de Pisos", None))

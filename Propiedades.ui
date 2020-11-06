@@ -38,6 +38,13 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pb_lista">
+       <property name="text">
+        <string>Lista</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
@@ -376,12 +383,28 @@
    <slot>casa_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>517</x>
-     <y>66</y>
+     <x>377</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
      <x>186</x>
      <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_lista</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>lista_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>476</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>15</y>
     </hint>
    </hints>
   </connection>

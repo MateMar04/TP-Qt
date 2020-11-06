@@ -20,7 +20,7 @@ class Ui_Menu(object):
     def setupUi(self, Menu):
         if not Menu.objectName():
             Menu.setObjectName(u"Menu")
-        Menu.resize(800, 600)
+        Menu.resize(800, 243)
         self.centralwidget = QWidget(Menu)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayoutWidget = QWidget(self.centralwidget)
@@ -29,37 +29,37 @@ class Ui_Menu(object):
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.verticalLayoutWidget)
-        self.label.setObjectName(u"label")
+        self.lb_menu = QLabel(self.verticalLayoutWidget)
+        self.lb_menu.setObjectName(u"lb_menu")
 
-        self.verticalLayout.addWidget(self.label)
+        self.verticalLayout.addWidget(self.lb_menu)
 
-        self.label_2 = QLabel(self.verticalLayoutWidget)
-        self.label_2.setObjectName(u"label_2")
+        self.lb_accion = QLabel(self.verticalLayoutWidget)
+        self.lb_accion.setObjectName(u"lb_accion")
 
-        self.verticalLayout.addWidget(self.label_2)
+        self.verticalLayout.addWidget(self.lb_accion)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.pushButton = QPushButton(self.verticalLayoutWidget)
-        self.pushButton.setObjectName(u"pushButton")
+        self.pb_agregar_propiedad = QPushButton(self.verticalLayoutWidget)
+        self.pb_agregar_propiedad.setObjectName(u"pb_agregar_propiedad")
 
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.horizontalLayout.addWidget(self.pb_agregar_propiedad)
 
-        self.pushButton_2 = QPushButton(self.verticalLayoutWidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pb_ver_propiedades = QPushButton(self.verticalLayoutWidget)
+        self.pb_ver_propiedades.setObjectName(u"pb_ver_propiedades")
 
-        self.horizontalLayout.addWidget(self.pushButton_2)
+        self.horizontalLayout.addWidget(self.pb_ver_propiedades)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.pushButton_3 = QPushButton(self.verticalLayoutWidget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pb_ver_lista = QPushButton(self.verticalLayoutWidget)
+        self.pb_ver_lista.setObjectName(u"pb_ver_lista")
 
-        self.horizontalLayout_2.addWidget(self.pushButton_3)
+        self.horizontalLayout_2.addWidget(self.pb_ver_lista)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_2)
@@ -70,19 +70,19 @@ class Ui_Menu(object):
         Menu.setStatusBar(self.statusbar)
 
         self.retranslateUi(Menu)
-        self.pushButton.clicked.connect(Menu.agregar_propiedades_slot)
-        self.pushButton_2.clicked.connect(Menu.ver_propiedades_slot)
-        self.pushButton_3.clicked.connect(Menu.ver_lista_slot)
+        self.pb_agregar_propiedad.clicked.connect(Menu.agregar_propiedades_slot)
+        self.pb_ver_propiedades.clicked.connect(Menu.ver_propiedades_slot)
+        self.pb_ver_lista.clicked.connect(Menu.ver_lista_slot)
 
         QMetaObject.connectSlotsByName(Menu)
     # setupUi
 
     def retranslateUi(self, Menu):
         Menu.setWindowTitle(QCoreApplication.translate("Menu", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("Menu", u"                                                                                                          MENU", None))
-        self.label_2.setText(QCoreApplication.translate("Menu", u"                                                                                      \u00bfQue accion desea realizar?", None))
-        self.pushButton.setText(QCoreApplication.translate("Menu", u"Agregar propiedad", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Menu", u"Ver Propiedades", None))
-        self.pushButton_3.setText(QCoreApplication.translate("Menu", u"Ver lista de guardados ", None))
+        self.lb_menu.setText(QCoreApplication.translate("Menu", u"                                                                                                          MENU", None))
+        self.lb_accion.setText(QCoreApplication.translate("Menu", u"                                                                                      \u00bfQue accion desea realizar?", None))
+        self.pb_agregar_propiedad.setText(QCoreApplication.translate("Menu", u"Agregar propiedad", None))
+        self.pb_ver_propiedades.setText(QCoreApplication.translate("Menu", u"Ver Propiedades", None))
+        self.pb_ver_lista.setText(QCoreApplication.translate("Menu", u"Ver lista de guardados ", None))
     # retranslateUi
 

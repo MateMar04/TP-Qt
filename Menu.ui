@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>243</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,14 +25,14 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="lb_menu">
        <property name="text">
         <string>                                                                                                          MENU</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="lb_accion">
        <property name="text">
         <string>                                                                                      ¿Que accion desea realizar?</string>
        </property>
@@ -41,14 +41,14 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="pb_agregar_propiedad">
          <property name="text">
           <string>Agregar propiedad</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="pb_ver_propiedades">
          <property name="text">
           <string>Ver Propiedades</string>
          </property>
@@ -59,7 +59,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="pb_ver_lista">
          <property name="text">
           <string>Ver lista de guardados </string>
          </property>
@@ -75,7 +75,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pb_agregar_propiedad</sender>
    <signal>clicked()</signal>
    <receiver>Menu</receiver>
    <slot>agregar_propiedades_slot()</slot>
@@ -91,7 +91,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>pb_ver_propiedades</sender>
    <signal>clicked()</signal>
    <receiver>Menu</receiver>
    <slot>ver_propiedades_slot()</slot>
@@ -107,7 +107,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_3</sender>
+   <sender>pb_ver_lista</sender>
    <signal>clicked()</signal>
    <receiver>Menu</receiver>
    <slot>ver_lista_slot()</slot>

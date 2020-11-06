@@ -68,6 +68,10 @@ class MainWindow(QMainWindow):
         self.toggle_inputs([self.ui.le_cant_pisos], False)
 
     @Slot()
+    def lista_slot(self):
+        self.list_window.show()
+
+    @Slot()
     def registrar_slot(self):
         departamento = Departamento(
             self.ui.le_direccion.text(),
@@ -128,6 +132,8 @@ class MainWindow(QMainWindow):
         self.ui.le_precio_ars.setText("")
         self.ui.le_precio_uds.setText("")
         self.ui.le_imagenes.setText("")
+
+
 
 
 if __name__ == "__main__":

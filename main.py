@@ -1,4 +1,3 @@
-import math
 import sys
 import requests
 
@@ -59,10 +58,6 @@ class MainWindow(QMainWindow):
             self.ui.le_precio_uds.setText("0")
 
     @Slot()
-    def lista_slot(self):
-        self.list_window.show()
-
-    @Slot()
     def casa_slot(self):
         self.toggle_inputs(self.all, True)
         self.toggle_inputs([self.ui.le_nro_departamento, self.ui.le_nro_piso], False)
@@ -108,7 +103,6 @@ class MainWindow(QMainWindow):
             self.borrar_todo_slot()
 
             if not casa.is_empty_h():
-                print(casa)
                 self.casas.append(casa)
                 self.borrar_todo_slot()
 

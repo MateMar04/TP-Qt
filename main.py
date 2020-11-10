@@ -148,6 +148,8 @@ class MainWindow(QMainWindow):
         return propiedades
 
 
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

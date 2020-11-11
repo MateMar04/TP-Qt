@@ -120,7 +120,6 @@ class MainWindow(QMainWindow):
             if self.list_window.isHidden():
                 self.list_window.show()
 
-
         else:
             warn = QMessageBox().critical(self, "Datos faltantes", "Ingrese los datos necesarios")
 

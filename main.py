@@ -23,7 +23,8 @@ class MainWindow(QMainWindow):
         self.all = [self.ui.le_direccion, self.ui.le_codigo_postal, self.ui.le_metros_cuadrados, self.ui.le_cant_pisos,
                     self.ui.le_nro_piso, self.ui.le_nro_departamento, self.ui.le_nro_ambientes,
                     self.ui.le_nro_dormitorios, self.ui.le_nro_banios, self.ui.cb_amueblado, self.ui.cb_habitado,
-                    self.ui.le_precio_ars, self.ui.le_precio_uds, self.ui.le_imagenes, self.ui.pb_registrar]
+                    self.ui.le_precio_ars, self.ui.le_precio_uds, self.ui.le_imagenes, self.ui.pb_registrar,
+                    self.ui.pb_borrar_todo]
 
         self.propiedades = []
 

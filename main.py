@@ -106,14 +106,20 @@ class MainWindow(QMainWindow):
             self.propiedades.append(departamento)
             self.save_file()
             self.borrar_todo_slot()
-
-            if not casa.is_empty_h():
-                self.propiedades.append(casa)
-                self.save_file()
-                self.borrar_todo_slot()
+            self.list_window.agregar_row_departamento(departamento)
 
             if self.list_window.isHidden():
                 self.list_window.show()
+
+        elif not casa.is_empty_h():
+            self.propiedades.append(casa)
+            self.save_file()
+            self.borrar_todo_slot()
+            self.list_window.agregar_row_casa(casa)
+
+            if self.list_window.isHidden():
+                self.list_window.show()
+
 
         else:
             warn = QMessageBox().critical(self, "Datos faltantes", "Ingrese los datos necesarios")

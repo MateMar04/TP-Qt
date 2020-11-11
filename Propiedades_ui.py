@@ -31,11 +31,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.pb_departamento = QPushButton(self.horizontalLayoutWidget)
         self.pb_departamento.setObjectName(u"pb_departamento")
+        icon = QIcon()
+        icon.addFile(u"../../Pictures/Icons/Vectorizador/department.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pb_departamento.setIcon(icon)
 
         self.horizontalLayout.addWidget(self.pb_departamento)
 
         self.pb_casa = QPushButton(self.horizontalLayoutWidget)
         self.pb_casa.setObjectName(u"pb_casa")
+        icon1 = QIcon()
+        icon1.addFile(u"../../Pictures/Icons/Vectorizador/casa.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pb_casa.setIcon(icon1)
 
         self.horizontalLayout.addWidget(self.pb_casa)
 
@@ -206,11 +212,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.pb_registrar = QPushButton(self.horizontalLayoutWidget_2)
         self.pb_registrar.setObjectName(u"pb_registrar")
+        icon2 = QIcon()
+        icon2.addFile(u"../../Pictures/Icons/Vectorizador/save.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pb_registrar.setIcon(icon2)
 
         self.horizontalLayout_2.addWidget(self.pb_registrar)
 
         self.pb_borrar_todo = QPushButton(self.horizontalLayoutWidget_2)
         self.pb_borrar_todo.setObjectName(u"pb_borrar_todo")
+        icon3 = QIcon()
+        icon3.addFile(u"../../Pictures/Icons/Vectorizador/clear.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pb_borrar_todo.setIcon(icon3)
 
         self.horizontalLayout_2.addWidget(self.pb_borrar_todo)
 

@@ -29,12 +29,20 @@
        <property name="text">
         <string>Departamento</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Pictures/Icons/Vectorizador/department.png</normaloff>../../Pictures/Icons/Vectorizador/department.png</iconset>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pb_casa">
        <property name="text">
         <string>Casa</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Pictures/Icons/Vectorizador/casa.png</normaloff>../../Pictures/Icons/Vectorizador/casa.png</iconset>
        </property>
       </widget>
      </item>
@@ -296,12 +304,20 @@
        <property name="text">
         <string>Registrar</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Pictures/Icons/Vectorizador/save.png</normaloff>../../Pictures/Icons/Vectorizador/save.png</iconset>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pb_borrar_todo">
        <property name="text">
         <string>Borrar Todo</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../Pictures/Icons/Vectorizador/clear.png</normaloff>../../Pictures/Icons/Vectorizador/clear.png</iconset>
        </property>
       </widget>
      </item>

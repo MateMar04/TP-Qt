@@ -7,11 +7,23 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>229</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>229</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>229</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Menu</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
@@ -41,16 +53,24 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="pb_agregar_propiedad">
          <property name="text">
           <string>Agregar propiedad</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../Pictures/Icons/Vectorizador/add.png</normaloff>../../Pictures/Icons/Vectorizador/add.png</iconset>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="pb_ver_propiedades">
          <property name="text">
           <string>Ver Propiedades</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../Pictures/Icons/Vectorizador/see.png</normaloff>../../Pictures/Icons/Vectorizador/see.png</iconset>
          </property>
         </widget>
        </item>
@@ -59,9 +79,13 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="pb_alquilar_propiedad">
          <property name="text">
-          <string>Ver lista de guardados </string>
+          <string>Alquilar Propiedad</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../Pictures/Icons/Vectorizador/for_sale.png</normaloff>../../Pictures/Icons/Vectorizador/for_sale.png</iconset>
          </property>
         </widget>
        </item>
@@ -75,7 +99,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pb_agregar_propiedad</sender>
    <signal>clicked()</signal>
    <receiver>Menu</receiver>
    <slot>agregar_propiedades_slot()</slot>
@@ -91,7 +115,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>pb_ver_propiedades</sender>
    <signal>clicked()</signal>
    <receiver>Menu</receiver>
    <slot>ver_propiedades_slot()</slot>
@@ -107,7 +131,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_3</sender>
+   <sender>pb_alquilar_propiedad</sender>
    <signal>clicked()</signal>
    <receiver>Menu</receiver>
    <slot>ver_lista_slot()</slot>

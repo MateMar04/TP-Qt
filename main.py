@@ -10,7 +10,7 @@ from ventana_lista import ListWindow
 
 from Departamento import Departamento
 from Casa import Casa
-    #hola
+
 
 class MainWindow(QMainWindow):
     def __init__(self):

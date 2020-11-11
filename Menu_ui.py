@@ -76,9 +76,6 @@ class Ui_Menu(object):
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         Menu.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(Menu)
-        self.statusbar.setObjectName(u"statusbar")
-        Menu.setStatusBar(self.statusbar)
 
         self.retranslateUi(Menu)
         self.pb_agregar_propiedad.clicked.connect(Menu.agregar_propiedades_slot)

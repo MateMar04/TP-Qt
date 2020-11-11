@@ -107,17 +107,6 @@ class Ui_Lista(object):
         self.pb_volver.setObjectName(u"pb_volver")
         self.pb_volver.setGeometry(QRect(50, 440, 89, 25))
         Lista.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(Lista)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1285, 22))
-        self.menuOrdenar = QMenu(self.menubar)
-        self.menuOrdenar.setObjectName(u"menuOrdenar")
-        Lista.setMenuBar(self.menubar)
-        self.statusbar = QStatusBar(Lista)
-        self.statusbar.setObjectName(u"statusbar")
-        Lista.setStatusBar(self.statusbar)
-
-        self.menubar.addAction(self.menuOrdenar.menuAction())
 
         self.retranslateUi(Lista)
         self.pb_volver.clicked.connect(Lista.volver_slot)
@@ -172,6 +161,5 @@ class Ui_Lista(object):
         self.lb_departamentos.setText(QCoreApplication.translate("Lista", u"Departamentos", None))
         self.lb_casas.setText(QCoreApplication.translate("Lista", u"Casas", None))
         self.pb_volver.setText(QCoreApplication.translate("Lista", u"Volver", None))
-        self.menuOrdenar.setTitle(QCoreApplication.translate("Lista", u"Ordenar", None))
     # retranslateUi
 

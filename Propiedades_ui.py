@@ -227,9 +227,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.pb_borrar_todo)
 
         MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         self.pb_registrar.clicked.connect(MainWindow.registrar_slot)

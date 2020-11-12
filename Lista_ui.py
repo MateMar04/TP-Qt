@@ -20,9 +20,9 @@ class Ui_Lista(object):
     def setupUi(self, Lista):
         if not Lista.objectName():
             Lista.setObjectName(u"Lista")
-        Lista.resize(1285, 518)
-        Lista.setMinimumSize(QSize(1285, 518))
-        Lista.setMaximumSize(QSize(1285, 518))
+        Lista.resize(1285, 480)
+        Lista.setMinimumSize(QSize(1285, 480))
+        Lista.setMaximumSize(QSize(1285, 480))
         self.centralwidget = QWidget(Lista)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayoutWidget = QWidget(self.centralwidget)
@@ -89,7 +89,7 @@ class Ui_Lista(object):
 
         self.verticalLayoutWidget_2 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(20, 0, 131, 431))
+        self.verticalLayoutWidget_2.setGeometry(QRect(20, 0, 131, 371))
         self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -105,11 +105,19 @@ class Ui_Lista(object):
 
         self.pb_volver = QPushButton(self.centralwidget)
         self.pb_volver.setObjectName(u"pb_volver")
-        self.pb_volver.setGeometry(QRect(50, 440, 89, 25))
+        self.pb_volver.setGeometry(QRect(18, 440, 141, 25))
+        self.pushButton = QPushButton(self.centralwidget)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(18, 410, 141, 25))
+        self.pushButton_2 = QPushButton(self.centralwidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(18, 380, 141, 25))
         Lista.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Lista)
         self.pb_volver.clicked.connect(Lista.volver_slot)
+        self.pushButton.clicked.connect(Lista.alquilar_propiedad_slot)
+        self.pushButton_2.clicked.connect(Lista.eliminar_propiedad_slot)
 
         QMetaObject.connectSlotsByName(Lista)
     # setupUi
@@ -161,5 +169,7 @@ class Ui_Lista(object):
         self.lb_departamentos.setText(QCoreApplication.translate("Lista", u"Departamentos", None))
         self.lb_casas.setText(QCoreApplication.translate("Lista", u"Casas", None))
         self.pb_volver.setText(QCoreApplication.translate("Lista", u"Volver", None))
+        self.pushButton.setText(QCoreApplication.translate("Lista", u"Alquilar Propiedad", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Lista", u"Eliminar Propiedad", None))
     # retranslateUi
 

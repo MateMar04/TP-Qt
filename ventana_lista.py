@@ -3,6 +3,7 @@ from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import Slot
 
 from Lista_ui import Ui_Lista
+from ventana_alquiler import HireWindow
 
 
 class ListWindow(QMainWindow):
@@ -10,10 +11,20 @@ class ListWindow(QMainWindow):
         super(ListWindow, self).__init__()
         self.ui = Ui_Lista()
         self.ui.setupUi(self)
+        self.hire_window = HireWindow()
 
     @Slot()
     def volver_slot(self):
         self.window().close()
+
+    @Slot()
+    def alquilar_propiedad_slot(self):
+        self.hire_window.show()
+
+    @Slot()
+    def eliminar_propiedad_slot(self):
+        pass
+
 
     def agregar_row_casa(self, casa):
         row_position = self.ui.tb_casas.rowCount()

@@ -18,6 +18,8 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        self.propiedades = []
+
         self.list_window = ListWindow()
 
         self.all = [self.ui.le_direccion, self.ui.le_codigo_postal, self.ui.le_metros_cuadrados, self.ui.le_cant_pisos,
@@ -26,7 +28,14 @@ class MainWindow(QMainWindow):
                     self.ui.le_precio_ars, self.ui.le_precio_uds, self.ui.le_imagenes, self.ui.pb_registrar,
                     self.ui.pb_borrar_todo]
 
-        self.propiedades = []
+        self.propiedades = self.read_file()
+
+        if len(self.propiedades):
+            for propiedad in self.propiedades:
+                if isinstance(propiedad, Casa):
+                    self.list_window.agregar_row_casa(propiedad)
+                else:
+                    self.list_window.agregar_row_departamento(propiedad)
 
         self.toggle_inputs(self.all, False)
 

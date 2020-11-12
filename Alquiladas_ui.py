@@ -88,15 +88,27 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.tableWidget_2)
 
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(40, 120, 101, 17))
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(60, 380, 41, 17))
+        self.lb_departamento = QLabel(self.centralwidget)
+        self.lb_departamento.setObjectName(u"lb_departamento")
+        self.lb_departamento.setGeometry(QRect(30, 100, 111, 20))
+        self.lb_casas = QLabel(self.centralwidget)
+        self.lb_casas.setObjectName(u"lb_casas")
+        self.lb_casas.setGeometry(QRect(60, 360, 41, 17))
+        self.pb_volver = QPushButton(self.centralwidget)
+        self.pb_volver.setObjectName(u"pb_volver")
+        self.pb_volver.setGeometry(QRect(20, 490, 131, 25))
+        self.pb_terminar_contrato = QPushButton(self.centralwidget)
+        self.pb_terminar_contrato.setObjectName(u"pb_terminar_contrato")
+        self.pb_terminar_contrato.setGeometry(QRect(20, 460, 131, 25))
+        self.pb_eliminar_propiedad = QPushButton(self.centralwidget)
+        self.pb_eliminar_propiedad.setObjectName(u"pb_eliminar_propiedad")
+        self.pb_eliminar_propiedad.setGeometry(QRect(18, 430, 131, 25))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        self.pb_eliminar_propiedad.clicked.connect(MainWindow.eliminar_propiedad_slot)
+        self.pb_terminar_contrato.clicked.connect(MainWindow.terminar_contrato_slot)
+        self.pb_volver.clicked.connect(MainWindow.volver_slot)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -145,7 +157,10 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Precio ARS", None));
         ___qtablewidgetitem20 = self.tableWidget_2.horizontalHeaderItem(9)
         ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Precio UDS", None));
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Departamentos", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Casas", None))
+        self.lb_departamento.setText(QCoreApplication.translate("MainWindow", u"Departamentos", None))
+        self.lb_casas.setText(QCoreApplication.translate("MainWindow", u"Casas", None))
+        self.pb_volver.setText(QCoreApplication.translate("MainWindow", u"Volver", None))
+        self.pb_terminar_contrato.setText(QCoreApplication.translate("MainWindow", u"Terminar Contrato", None))
+        self.pb_eliminar_propiedad.setText(QCoreApplication.translate("MainWindow", u"Eliminar Propiedad", None))
     # retranslateUi
 

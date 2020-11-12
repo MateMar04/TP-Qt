@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>1285</width>
-    <height>518</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1285</width>
-    <height>518</height>
+    <height>480</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1285</width>
-    <height>518</height>
+    <height>480</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -157,7 +157,7 @@
       <x>20</x>
       <y>0</y>
       <width>131</width>
-      <height>431</height>
+      <height>371</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -180,14 +180,40 @@
    <widget class="QPushButton" name="pb_volver">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>18</x>
       <y>440</y>
-      <width>89</width>
+      <width>141</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
      <string>Volver</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>18</x>
+      <y>410</y>
+      <width>141</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Alquilar Propiedad</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>18</x>
+      <y>380</y>
+      <width>141</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eliminar Propiedad</string>
     </property>
    </widget>
   </widget>
@@ -201,17 +227,51 @@
    <slot>volver_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>84</x>
-     <y>478</y>
+     <x>52</x>
+     <y>464</y>
     </hint>
     <hint type="destinationlabel">
      <x>148</x>
-     <y>482</y>
+     <y>479</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Lista</receiver>
+   <slot>alquilar_propiedad_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Lista</receiver>
+   <slot>eliminar_propiedad_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>11</x>
+     <y>359</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>volver_slot()</slot>
+  <slot>alquilar_propiedad_slot()</slot>
+  <slot>eliminar_propiedad_slot()</slot>
  </slots>
 </ui>

@@ -154,24 +154,24 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lb_departamento">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>120</y>
-      <width>101</width>
-      <height>17</height>
+      <x>30</x>
+      <y>100</y>
+      <width>111</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string>Departamentos</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="lb_casas">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>380</y>
+      <y>360</y>
       <width>41</width>
       <height>17</height>
      </rect>
@@ -180,8 +180,101 @@
      <string>Casas</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pb_volver">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Volver</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_terminar_contrato">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>460</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Terminar Contrato</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_eliminar_propiedad">
+    <property name="geometry">
+     <rect>
+      <x>18</x>
+      <y>430</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eliminar Propiedad</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pb_eliminar_propiedad</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>eliminar_propiedad_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_terminar_contrato</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>terminar_contrato_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>466</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>40</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_volver</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>volver_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>507</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>27</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>eliminar_propiedad_slot()</slot>
+  <slot>terminar_contrato_slot()</slot>
+  <slot>volver_slot()</slot>
+ </slots>
 </ui>

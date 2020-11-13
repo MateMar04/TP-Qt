@@ -1,3 +1,5 @@
+import pickle
+
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import Slot
 
@@ -9,9 +11,8 @@ class HireWindow(QMainWindow):
         super(HireWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
         self.alquiladas = []
-
-
 
     @Slot()
     def eliminar_propiedad_slot(self):
@@ -24,3 +25,15 @@ class HireWindow(QMainWindow):
     @Slot()
     def volver_slot(self):
         self.window().close()
+
+    def save_file(self):
+        with open("alquiladas.v", "wb") as file:
+            pickle.dump(self.alquiladas, file)
+
+    def read_file(self):
+        try:
+            with open("alquiladas.v", "rb") as file:
+                alquiladas = pickle.load(file)
+        except FileNotFoundError:
+            alquiladas = []
+        return alquiladas

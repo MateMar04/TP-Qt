@@ -56,8 +56,8 @@ class MainWindow(QMainWindow):
                 return float(self.dolar_oficial.replace(",", "."))
         return 0
 
-    def toggle_inputs(self, input, state):
-        for i in input:
+    def toggle_inputs(self, obj, state):
+        for i in obj:
             i.setEnabled(state)
 
     @Slot()

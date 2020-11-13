@@ -1,3 +1,5 @@
+import pickle
+
 from PySide2 import QtWidgets
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import Slot
@@ -9,6 +11,8 @@ from ventana_alquiler import HireWindow
 class ListWindow(QMainWindow):
     def __init__(self):
         super(ListWindow, self).__init__()
+        self.casas = []
+        self.departamentos = []
         self.ui = Ui_Lista()
         self.ui.setupUi(self)
         self.hire_window = HireWindow()
@@ -27,15 +31,28 @@ class ListWindow(QMainWindow):
         selected_flat = self.ui.tb_departamentos.selectedItems()
 
         for i in range(len(selected_house)):
-            house_index = selected_house[i].row()
-            self.ui.tb_casas.removeRow(house_index)
+            house_row = selected_house[i].row()
+            self.ui.tb_casas.removeRow(house_row)
+            self.casas.pop(house_row)
 
         for i in range(len(selected_flat)):
-            flat_index = selected_flat[i].row()
-            self.ui.tb_departamentos.removeRow(flat_index)
+            flat_row = selected_flat[i].row()
+            self.ui.tb_departamentos.removeRow(flat_row)
+            self.departamentos.pop(flat_row)
+
+        elementos = []
+        elementos.extend(self.casas)
+        elementos.extend(self.departamentos)
+        self.save_file(elementos)
+
+    @staticmethod
+    def save_file(propiedades):
+        with open("propiedades.v", "wb") as file:
+            pickle.dump(propiedades, file)
 
     def agregar_row_casa(self, casa):
         row_position = self.ui.tb_casas.rowCount()
+        self.casas.append(casa)
         self.ui.tb_casas.insertRow(row_position)
         self.ui.tb_casas.setItem(row_position, 0, QtWidgets.QTableWidgetItem(casa.direccion))
         self.ui.tb_casas.setItem(row_position, 1, QtWidgets.QTableWidgetItem(casa.cant_pisos))
@@ -50,6 +67,7 @@ class ListWindow(QMainWindow):
 
     def agregar_row_departamento(self, departamento):
         row_position = self.ui.tb_departamentos.rowCount()
+        self.departamentos.append(departamento)
         self.ui.tb_departamentos.insertRow(row_position)
         self.ui.tb_departamentos.setItem(row_position, 0, QtWidgets.QTableWidgetItem(departamento.direccion))
         self.ui.tb_departamentos.setItem(row_position, 1, QtWidgets.QTableWidgetItem(departamento.nro_piso))

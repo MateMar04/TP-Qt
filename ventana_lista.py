@@ -34,8 +34,6 @@ class ListWindow(QMainWindow):
             flat_index = selected_flat[i].row()
             self.ui.tb_departamentos.removeRow(flat_index)
 
-
-
     def agregar_row_casa(self, casa):
         row_position = self.ui.tb_casas.rowCount()
         self.ui.tb_casas.insertRow(row_position)

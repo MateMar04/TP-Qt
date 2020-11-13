@@ -25,7 +25,6 @@ class ListWindow(QMainWindow):
     def eliminar_propiedad_slot(self):
         pass
 
-
     def agregar_row_casa(self, casa):
         row_position = self.ui.tb_casas.rowCount()
         self.ui.tb_casas.insertRow(row_position)

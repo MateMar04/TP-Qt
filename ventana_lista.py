@@ -13,9 +13,6 @@ class ListWindow(QMainWindow):
         self.ui.setupUi(self)
         self.hire_window = HireWindow()
 
-        self.selected_house = self.ui.tb_casas.selectedItems()
-        self.selected_flat = self.ui.tb_departamentos.selectedItems()
-
     @Slot()
     def volver_slot(self):
         self.window().close()
@@ -26,11 +23,18 @@ class ListWindow(QMainWindow):
 
     @Slot()
     def eliminar_propiedad_slot(self):
-        for house in self.selected_house:
-            self.ui.tb_casas.removeRow(house)
+        selected_house = self.ui.tb_casas.selectedItems()
+        selected_flat = self.ui.tb_departamentos.selectedItems()
 
-        for flat in self.selected_flat:
-            self.ui.tb_departamentos.removeRow(flat)
+        for i in range(len(selected_house)):
+            house_index = selected_house[i].row()
+            self.ui.tb_casas.removeRow(house_index)
+
+        for i in range(len(selected_flat)):
+            flat_index = selected_flat[i].row()
+            self.ui.tb_departamentos.removeRow(flat_index)
+
+
 
     def agregar_row_casa(self, casa):
         row_position = self.ui.tb_casas.rowCount()

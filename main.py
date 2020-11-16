@@ -1,10 +1,10 @@
 import sys
 import requests
-import pickle
 
 from PySide2.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PySide2.QtCore import Slot
 
+from Base_de_Datos import BaseDeDatos
 from Propiedades_ui import Ui_MainWindow
 from ventana_lista import ListWindow
 
@@ -13,14 +13,15 @@ from Casa import Casa
 
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, base_de_datos):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.base_de_datos = base_de_datos
 
-        self.propiedades = []
+        self.es_casa = False
 
-        self.list_window = ListWindow()
+        self.list_window = ListWindow(base_de_datos)
 
         self.all = [self.ui.le_direccion, self.ui.le_codigo_postal, self.ui.le_metros_cuadrados, self.ui.le_cant_pisos,
                     self.ui.le_nro_piso, self.ui.le_nro_departamento, self.ui.le_nro_ambientes,
@@ -28,15 +29,7 @@ class MainWindow(QMainWindow):
                     self.ui.le_precio_ars, self.ui.le_precio_uds, self.ui.le_imagenes, self.ui.pb_registrar,
                     self.ui.pb_borrar_todo]
 
-        self.propiedades = self.read_file()
-
-        if len(self.propiedades):
-            for propiedad in self.propiedades:
-                if isinstance(propiedad, Casa):
-                    self.list_window.agregar_row_casa(propiedad)
-                else:
-                    self.list_window.agregar_row_departamento(propiedad)
-
+        self.list_window.refresh(base_de_datos.read())
         self.toggle_inputs(self.all, False)
 
         self.dolar = self.init_dolar()
@@ -71,11 +64,13 @@ class MainWindow(QMainWindow):
     def casa_slot(self):
         self.toggle_inputs(self.all, True)
         self.toggle_inputs([self.ui.le_nro_departamento, self.ui.le_nro_piso], False)
+        self.es_casa = True
 
     @Slot()
     def departamento_slot(self):
         self.toggle_inputs(self.all, True)
         self.toggle_inputs([self.ui.le_cant_pisos], False)
+        self.es_casa = False
 
     @Slot()
     def lista_slot(self):
@@ -83,55 +78,54 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def registrar_slot(self):
-        departamento = Departamento(
-            self.ui.le_direccion.text(),
-            self.ui.le_codigo_postal.text(),
-            self.ui.le_metros_cuadrados.text(),
-            self.ui.le_nro_piso.text(),
-            self.ui.le_nro_departamento.text(),
-            self.ui.le_nro_ambientes.text(),
-            self.ui.le_nro_dormitorios.text(),
-            self.ui.le_nro_banios.text(),
-            self.ui.cb_amueblado.currentText(),
-            self.ui.cb_habitado.currentText(),
-            self.ui.le_precio_ars.text(),
-            self.ui.le_precio_uds.text()
-        )
+        id = self.base_de_datos.next_id()
+        if self.es_casa:
+            casa = Casa(
+                id,
+                self.ui.le_direccion.text(),
+                self.ui.le_codigo_postal.text(),
+                self.ui.le_metros_cuadrados.text(),
+                self.ui.le_cant_pisos.text(),
+                self.ui.le_nro_ambientes.text(),
+                self.ui.le_nro_dormitorios.text(),
+                self.ui.le_nro_banios.text(),
+                self.ui.cb_amueblado.currentText(),
+                self.ui.cb_habitado.currentText(),
+                self.ui.le_precio_ars.text(),
+                self.ui.le_precio_uds.text()
+            )
+            if casa.is_empty_h():
+                warn = QMessageBox().critical(self, "Datos faltantes", "Ingrese los datos necesarios")
+            else:
+                self.list_window.agregar_row_casa(casa)
+                self.borrar_todo_slot()
 
-        casa = Casa(
-            self.ui.le_direccion.text(),
-            self.ui.le_codigo_postal.text(),
-            self.ui.le_metros_cuadrados.text(),
-            self.ui.le_cant_pisos.text(),
-            self.ui.le_nro_ambientes.text(),
-            self.ui.le_nro_dormitorios.text(),
-            self.ui.le_nro_banios.text(),
-            self.ui.cb_amueblado.currentText(),
-            self.ui.cb_habitado.currentText(),
-            self.ui.le_precio_ars.text(),
-            self.ui.le_precio_uds.text()
-        )
-
-        if not departamento.is_empty_f():
-            self.propiedades.append(departamento)
-            self.save_file()
-            self.borrar_todo_slot()
-            self.list_window.agregar_row_departamento(departamento)
-
-            if self.list_window.isHidden():
-                self.list_window.show()
-
-        elif not casa.is_empty_h():
-            self.propiedades.append(casa)
-            self.save_file()
-            self.borrar_todo_slot()
-            self.list_window.agregar_row_casa(casa)
-
-            if self.list_window.isHidden():
-                self.list_window.show()
+                self.list_window.mostrar()
 
         else:
-            warn = QMessageBox().critical(self, "Datos faltantes", "Ingrese los datos necesarios")
+            departamento = Departamento(
+                id,
+                self.ui.le_direccion.text(),
+                self.ui.le_codigo_postal.text(),
+                self.ui.le_metros_cuadrados.text(),
+                self.ui.le_nro_piso.text(),
+                self.ui.le_nro_departamento.text(),
+                self.ui.le_nro_ambientes.text(),
+                self.ui.le_nro_dormitorios.text(),
+                self.ui.le_nro_banios.text(),
+                self.ui.cb_amueblado.currentText(),
+                self.ui.cb_habitado.currentText(),
+                self.ui.le_precio_ars.text(),
+                self.ui.le_precio_uds.text()
+            )
+
+            if departamento.is_empty_f():
+                warn = QMessageBox().critical(self, "Datos faltantes", "Ingrese los datos necesarios")
+            else:
+                self.list_window.agregar_row_departamento(departamento)
+                self.borrar_todo_slot()
+
+                self.list_window.mostrar()
 
     @Slot()
     def borrar_todo_slot(self):
@@ -150,23 +144,12 @@ class MainWindow(QMainWindow):
         self.ui.le_precio_uds.setText("")
         self.ui.le_imagenes.setText("")
 
-    def save_file(self):
-        with open("propiedades.v", "wb") as file:
-            pickle.dump(self.propiedades, file)
-
-    def read_file(self):
-        try:
-            with open("propiedades.v", "rb") as file:
-                propiedades = pickle.load(file)
-        except FileNotFoundError:
-            propiedades = []
-        return propiedades
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    window = MainWindow()
+    base_de_datos = BaseDeDatos("propiedades.v")
+    window = MainWindow(base_de_datos)
     window.show()
 
     sys.exit(app.exec_())

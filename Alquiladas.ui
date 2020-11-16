@@ -37,10 +37,15 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTableWidget" name="tb_departamentos">
        <attribute name="horizontalHeaderDefaultSectionSize">
         <number>100</number>
        </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
        <column>
         <property name="text">
          <string>Direccion</string>
@@ -99,7 +104,12 @@
       </widget>
      </item>
      <item>
-      <widget class="QTableWidget" name="tableWidget_2">
+      <widget class="QTableWidget" name="tb_casas">
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
        <column>
         <property name="text">
          <string>Direccion</string>

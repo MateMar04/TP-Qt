@@ -1,19 +1,16 @@
-class Departamento:
+from Inmueble import Inmueble
 
-    def __init__(self, direccion, codigo_postal, m2, nro_piso, nro_dpto, nro_ambientes, nro_dormitorios, nro_banios, amueblado,
-                 habitado, precio_ars, precio_uds):
-        self.direccion = direccion
-        self.codigo_postal = codigo_postal
-        self.m2 = m2
+
+class Departamento(Inmueble):
+
+    def __init__(self, id, direccion, codigo_postal, m2, nro_piso, nro_dpto, nro_ambientes, nro_dormitorios, nro_banios,
+                 amueblado, habitado, precio_ars, precio_uds):
+
+        super().__init__(id, direccion, codigo_postal, m2, nro_ambientes, nro_dormitorios, nro_banios, amueblado, habitado,
+                         precio_ars, precio_uds, False)
+
         self.nro_piso = nro_piso
         self.nro_depto = nro_dpto
-        self.nro_ambientes = nro_ambientes
-        self.nro_dormitorios = nro_dormitorios
-        self.nro_banios = nro_banios
-        self.amueblado = amueblado
-        self.habitado = habitado
-        self.precio_ars = precio_ars
-        self.precio_uds = precio_uds
 
     def is_empty_f(self):
         return self.direccion == "" or self.codigo_postal == "" or self.m2 == "" or self.nro_piso == "" \

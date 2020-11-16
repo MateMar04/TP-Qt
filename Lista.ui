@@ -40,6 +40,11 @@
       <widget class="QTableWidget" name="tb_departamentos">
        <column>
         <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
          <string>Direccion</string>
         </property>
        </column>
@@ -97,6 +102,11 @@
      </item>
      <item>
       <widget class="QTableWidget" name="tb_casas">
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
        <column>
         <property name="text">
          <string>Direccion</string>

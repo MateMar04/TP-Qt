@@ -1,4 +1,3 @@
-
 from PySide2 import QtWidgets
 from PySide2.QtWidgets import QMainWindow
 from PySide2.QtCore import Slot

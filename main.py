@@ -64,12 +64,15 @@ class MainWindow(QMainWindow):
     def casa_slot(self):
         self.toggle_inputs(self.all, True)
         self.toggle_inputs([self.ui.le_nro_departamento, self.ui.le_nro_piso], False)
+        self.ui.le_nro_departamento.setText("")
+        self.ui.le_nro_piso.setText("")
         self.es_casa = True
 
     @Slot()
     def departamento_slot(self):
         self.toggle_inputs(self.all, True)
         self.toggle_inputs([self.ui.le_cant_pisos], False)
+        self.ui.le_cant_pisos.setText("")
         self.es_casa = False
 
     @Slot()

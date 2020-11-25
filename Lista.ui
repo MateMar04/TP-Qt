@@ -166,7 +166,7 @@
      <rect>
       <x>20</x>
       <y>0</y>
-      <width>131</width>
+      <width>139</width>
       <height>371</height>
      </rect>
     </property>
@@ -187,44 +187,45 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pb_volver">
+   <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>18</x>
-      <y>440</y>
-      <width>141</width>
-      <height>25</height>
+      <x>0</x>
+      <y>350</y>
+      <width>171</width>
+      <height>121</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Volver</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>18</x>
-      <y>410</y>
-      <width>141</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Alquilar Propiedad</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>18</x>
-      <y>380</y>
-      <width>141</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Eliminar Propiedad</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Eliminar Propiedad</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Alquilar Propiedad</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>Ver Alquiladas</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_volver">
+       <property name="text">
+        <string>Volver</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>
@@ -253,8 +254,8 @@
    <slot>alquilar_propiedad_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
-     <y>422</y>
+     <x>127</x>
+     <y>394</y>
     </hint>
     <hint type="destinationlabel">
      <x>158</x>
@@ -269,12 +270,28 @@
    <slot>eliminar_propiedad_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>76</x>
-     <y>386</y>
+     <x>59</x>
+     <y>357</y>
     </hint>
     <hint type="destinationlabel">
      <x>11</x>
      <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>Lista</receiver>
+   <slot>ver_alquilados_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>420</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>171</x>
+     <y>424</y>
     </hint>
    </hints>
   </connection>
@@ -283,5 +300,6 @@
   <slot>volver_slot()</slot>
   <slot>alquilar_propiedad_slot()</slot>
   <slot>eliminar_propiedad_slot()</slot>
+  <slot>ver_alquilados_slot()</slot>
  </slots>
 </ui>

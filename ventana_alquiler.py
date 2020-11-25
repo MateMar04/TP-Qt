@@ -5,6 +5,8 @@ from PySide2.QtCore import Slot
 from Alquiladas_ui import Ui_MainWindow
 from Casa import Casa
 
+from selenium import webdriver
+
 
 class HireWindow(QMainWindow):
     def __init__(self, base_de_datos):
@@ -21,6 +23,8 @@ class HireWindow(QMainWindow):
         self.ordenado_por_precio = False
 
         self.alquiladas = []
+
+        driver = webdriver.Chrome("./chromedriver")
 
     @Slot()
     def eliminar_propiedad_slot(self):

@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1285</width>
-    <height>518</height>
+    <width>1405</width>
+    <height>498</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1285</width>
-    <height>518</height>
+    <width>1405</width>
+    <height>498</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1285</width>
-    <height>518</height>
+    <width>1405</width>
+    <height>498</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -29,10 +29,10 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>190</x>
       <y>10</y>
-      <width>1101</width>
-      <height>501</height>
+      <width>1201</width>
+      <height>461</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -168,7 +168,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>100</y>
+      <y>110</y>
       <width>111</width>
       <height>20</height>
      </rect>
@@ -181,7 +181,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>360</y>
+      <y>340</y>
       <width>41</width>
       <height>17</height>
      </rect>
@@ -207,7 +207,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>460</y>
+      <y>440</y>
       <width>131</width>
       <height>25</height>
      </rect>
@@ -220,7 +220,7 @@
     <property name="geometry">
      <rect>
       <x>18</x>
-      <y>430</y>
+      <y>410</y>
       <width>131</width>
       <height>25</height>
      </rect>
@@ -230,6 +230,58 @@
     </property>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1405</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOrdenar">
+    <property name="title">
+     <string>Ordenar</string>
+    </property>
+    <addaction name="actionPor_ID"/>
+    <addaction name="actionPor_Codigo_Postal"/>
+    <addaction name="actionPor_ambientes"/>
+    <addaction name="actionPor_Metros_Cuadrados"/>
+    <addaction name="actionPor_Dormitorios"/>
+    <addaction name="actionPor_Precio"/>
+   </widget>
+   <addaction name="menuOrdenar"/>
+  </widget>
+  <action name="actionPor_ID">
+   <property name="text">
+    <string>Por ID</string>
+   </property>
+  </action>
+  <action name="actionPor_Codigo_Postal">
+   <property name="text">
+    <string>Por Codigo Postal</string>
+   </property>
+  </action>
+  <action name="actionPor_ambientes">
+   <property name="text">
+    <string>Por Ambientes</string>
+   </property>
+  </action>
+  <action name="actionPor_Metros_Cuadrados">
+   <property name="text">
+    <string>Por Metros Cuadrados</string>
+   </property>
+  </action>
+  <action name="actionPor_Dormitorios">
+   <property name="text">
+    <string>Por Dormitorios</string>
+   </property>
+  </action>
+  <action name="actionPor_Precio">
+   <property name="text">
+    <string>Por Precio</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections>
@@ -273,11 +325,107 @@
    <hints>
     <hint type="sourcelabel">
      <x>51</x>
-     <y>507</y>
+     <y>529</y>
     </hint>
     <hint type="destinationlabel">
      <x>27</x>
      <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPor_Codigo_Postal</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>por_codigo_postal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPor_Dormitorios</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>por_dormitorios()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPor_ID</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>por_id()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPor_Metros_Cuadrados</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>por_metros_cuadrados()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPor_Precio</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>por_precio()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPor_ambientes</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>por_ambientes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>702</x>
+     <y>248</y>
     </hint>
    </hints>
   </connection>
@@ -286,5 +434,11 @@
   <slot>eliminar_propiedad_slot()</slot>
   <slot>terminar_contrato_slot()</slot>
   <slot>volver_slot()</slot>
+  <slot>por_ambientes()</slot>
+  <slot>por_codigo_postal()</slot>
+  <slot>por_dormitorios()</slot>
+  <slot>por_id()</slot>
+  <slot>por_metros_cuadrados()</slot>
+  <slot>por_precio()</slot>
  </slots>
 </ui>

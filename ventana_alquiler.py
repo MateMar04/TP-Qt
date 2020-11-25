@@ -13,6 +13,12 @@ class HireWindow(QMainWindow):
         self.base_de_datos.add_listener(self.refresh)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.ordenado_por_id = False
+        self.ordenado_por_cp = False
+        self.ordenado_por_nro_ambientes = False
+        self.ordenado_por_m2 = False
+        self.ordenado_por_dormitorios = False
+        self.ordenado_por_precio = False
 
         self.alquiladas = []
 
@@ -52,6 +58,36 @@ class HireWindow(QMainWindow):
     @Slot()
     def volver_slot(self):
         self.window().close()
+
+    @Slot()
+    def por_id(self):
+        self.refresh(self.ordenar(self.base_de_datos.read(), self.ordenado_por_id, lambda p: p.id))
+        self.ordenado_por_id = not self.ordenado_por_id
+
+    @Slot()
+    def por_codigo_postal(self):
+        self.refresh(self.ordenar(self.base_de_datos.read(), self.ordenado_por_cp, lambda p: p.codigo_postal))
+        self.ordenado_por_cp = not self.ordenado_por_cp
+
+    @Slot()
+    def por_ambientes(self):
+        self.refresh(self.ordenar(self.base_de_datos.read(), self.ordenado_por_nro_ambientes, lambda p: p.nro_ambientes))
+        self.ordenado_por_nro_ambientes = not self.ordenado_por_nro_ambientes
+
+    @Slot()
+    def por_metros_cuadrados(self):
+        self.refresh(self.ordenar(self.base_de_datos.read(), self.ordenado_por_m2, lambda p: p.m2))
+        self.ordenado_por_m2 = not self.ordenado_por_m2
+
+    @Slot()
+    def por_dormitorios(self):
+        self.refresh(self.ordenar(self.base_de_datos.read(), self.ordenado_por_dormitorios, lambda p: p.nro_dormitorios))
+        self.ordenado_por_dormitorios = not self.ordenado_por_dormitorios
+
+    @Slot()
+    def por_precio(self):
+        self.refresh(self.ordenar(self.base_de_datos.read(), self.ordenado_por_precio, lambda p: p.precio_ars))
+        self.ordenado_por_precio = not self.ordenado_por_precio
 
     def agregar_casa_a_lista(self, casa):
         row_position = self.ui.tb_casas.rowCount()
@@ -98,3 +134,7 @@ class HireWindow(QMainWindow):
                     self.agregar_casa_a_lista(inmueble)
                 else:
                     self.agregar_departamento_a_lista(inmueble)
+
+    def ordenar(self, elementos, modo, comparador):
+        elementos.sort(reverse=modo, key=comparador)
+        return elementos

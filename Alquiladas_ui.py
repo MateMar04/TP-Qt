@@ -20,9 +20,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1502, 498)
-        MainWindow.setMinimumSize(QSize(1502, 498))
-        MainWindow.setMaximumSize(QSize(1502, 498))
+        MainWindow.resize(1350, 498)
+        MainWindow.setMinimumSize(QSize(1350, 498))
+        MainWindow.setMaximumSize(QSize(1350, 498))
         self.actionPor_ID = QAction(MainWindow)
         self.actionPor_ID.setObjectName(u"actionPor_ID")
         self.actionPor_Codigo_Postal = QAction(MainWindow)
@@ -143,7 +143,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QMenuBar(MainWindow)
         self.menuBar.setObjectName(u"menuBar")
-        self.menuBar.setGeometry(QRect(0, 0, 1502, 22))
+        self.menuBar.setGeometry(QRect(0, 0, 1350, 22))
         self.menuOrdenar = QMenu(self.menuBar)
         self.menuOrdenar.setObjectName(u"menuOrdenar")
         MainWindow.setMenuBar(self.menuBar)

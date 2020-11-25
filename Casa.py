@@ -4,10 +4,10 @@ from Inmueble import Inmueble
 class Casa(Inmueble):
 
     def __init__(self, id, direccion, codigo_postal, m2, cant_pisos, nro_ambientes, nro_dormitorios, nro_banios, amueblado,
-                 habitado, precio_ars, precio_uds):
+                 habitado, precio_ars, precio_uds, imagenes):
 
         super().__init__(id, direccion, codigo_postal, m2, nro_ambientes, nro_dormitorios, nro_banios, amueblado, habitado,
-                         precio_ars, precio_uds, False)
+                         precio_ars, precio_uds, imagenes, False)
 
         self.cant_pisos = cant_pisos
 

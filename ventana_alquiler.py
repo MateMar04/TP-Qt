@@ -24,8 +24,6 @@ class HireWindow(QMainWindow):
 
         self.alquiladas = []
 
-        driver = webdriver.Chrome("./chromedriver")
-
     @Slot()
     def eliminar_propiedad_slot(self):
         selected_house = self.ui.tb_casas.selectedItems()
@@ -93,6 +91,10 @@ class HireWindow(QMainWindow):
         self.refresh(self.ordenar(self.base_de_datos.read(), self.ordenado_por_precio, lambda p: p.precio_ars))
         self.ordenado_por_precio = not self.ordenado_por_precio
 
+    @Slot()
+    def buscar_internet_slot(self):
+        pass
+
     def agregar_casa_a_lista(self, casa):
         row_position = self.ui.tb_casas.rowCount()
         self.ui.tb_casas.insertRow(row_position)
@@ -107,6 +109,7 @@ class HireWindow(QMainWindow):
         self.ui.tb_casas.setItem(row_position, 8, QtWidgets.QTableWidgetItem(casa.habitado))
         self.ui.tb_casas.setItem(row_position, 9, QtWidgets.QTableWidgetItem(casa.precio_ars))
         self.ui.tb_casas.setItem(row_position, 10, QtWidgets.QTableWidgetItem(casa.precio_uds))
+        self.ui.tb_casas.setItem(row_position, 11, QtWidgets.QTableWidgetItem(casa.imagenes))
 
     def agregar_departamento_a_lista(self, departamento):
         row_position = self.ui.tb_departamentos.rowCount()
@@ -123,6 +126,7 @@ class HireWindow(QMainWindow):
         self.ui.tb_departamentos.setItem(row_position, 9, QtWidgets.QTableWidgetItem(departamento.habitado))
         self.ui.tb_departamentos.setItem(row_position, 10, QtWidgets.QTableWidgetItem(departamento.precio_ars))
         self.ui.tb_departamentos.setItem(row_position, 11, QtWidgets.QTableWidgetItem(departamento.precio_uds))
+        self.ui.tb_departamentos.setItem(row_position, 12, QtWidgets.QTableWidgetItem(departamento.imagenes))
 
     def mostrar(self):
         if self.isHidden():

@@ -4,10 +4,10 @@ from Inmueble import Inmueble
 class Departamento(Inmueble):
 
     def __init__(self, id, direccion, codigo_postal, m2, nro_piso, nro_dpto, nro_ambientes, nro_dormitorios, nro_banios,
-                 amueblado, habitado, precio_ars, precio_uds):
+                 amueblado, habitado, precio_ars, precio_uds, imagenes):
 
         super().__init__(id, direccion, codigo_postal, m2, nro_ambientes, nro_dormitorios, nro_banios, amueblado, habitado,
-                         precio_ars, precio_uds, False)
+                         precio_ars, precio_uds, imagenes, False)
 
         self.nro_piso = nro_piso
         self.nro_depto = nro_dpto

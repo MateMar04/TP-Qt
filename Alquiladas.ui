@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1405</width>
+    <width>1502</width>
     <height>498</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1405</width>
+    <width>1502</width>
     <height>498</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1405</width>
+    <width>1502</width>
     <height>498</height>
    </size>
   </property>
@@ -31,7 +31,7 @@
      <rect>
       <x>190</x>
       <y>10</y>
-      <width>1201</width>
+      <width>1301</width>
       <height>461</height>
      </rect>
     </property>
@@ -101,6 +101,11 @@
          <string>Precio UDS</string>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>Imagenes</string>
+        </property>
+       </column>
       </widget>
      </item>
      <item>
@@ -160,6 +165,11 @@
          <string>Precio UDS</string>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>Imagenes</string>
+        </property>
+       </column>
       </widget>
      </item>
     </layout>
@@ -180,8 +190,8 @@
    <widget class="QLabel" name="lb_casas">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>340</y>
+      <x>70</x>
+      <y>320</y>
       <width>41</width>
       <height>17</height>
      </rect>
@@ -190,44 +200,45 @@
      <string>Casas</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pb_volver">
+   <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>490</y>
-      <width>131</width>
-      <height>25</height>
+      <x>10</x>
+      <y>379</y>
+      <width>160</width>
+      <height>91</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Volver</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pb_terminar_contrato">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>440</y>
-      <width>131</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Terminar Contrato</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pb_eliminar_propiedad">
-    <property name="geometry">
-     <rect>
-      <x>18</x>
-      <y>410</y>
-      <width>131</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Eliminar Propiedad</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pb_buscar">
+       <property name="text">
+        <string>Buscar en Internet</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_eliminar_propiedad">
+       <property name="text">
+        <string>Eliminar Propiedad</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_terminar_contrato">
+       <property name="text">
+        <string>Terminar Contrato</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_volver">
+       <property name="text">
+        <string>Volver</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -235,7 +246,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1405</width>
+     <width>1502</width>
      <height>22</height>
     </rect>
    </property>
@@ -292,8 +303,8 @@
    <slot>eliminar_propiedad_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>133</x>
-     <y>437</y>
+     <x>126</x>
+     <y>409</y>
     </hint>
     <hint type="destinationlabel">
      <x>164</x>
@@ -308,28 +319,12 @@
    <slot>terminar_contrato_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>78</x>
-     <y>466</y>
+     <x>69</x>
+     <y>439</y>
     </hint>
     <hint type="destinationlabel">
      <x>40</x>
      <y>392</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pb_volver</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>volver_slot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>51</x>
-     <y>529</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>27</x>
-     <y>343</y>
     </hint>
    </hints>
   </connection>
@@ -429,6 +424,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pb_volver</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>volver_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>142</x>
+     <y>325</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_buscar</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>buscar_internet_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>23</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>eliminar_propiedad_slot()</slot>
@@ -440,5 +467,6 @@
   <slot>por_id()</slot>
   <slot>por_metros_cuadrados()</slot>
   <slot>por_precio()</slot>
+  <slot>buscar_internet_slot()</slot>
  </slots>
 </ui>

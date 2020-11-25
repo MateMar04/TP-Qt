@@ -95,7 +95,8 @@ class MainWindow(QMainWindow):
                 self.ui.cb_amueblado.currentText(),
                 self.ui.cb_habitado.currentText(),
                 self.ui.le_precio_ars.text(),
-                self.ui.le_precio_uds.text()
+                self.ui.le_precio_uds.text(),
+                self.ui.le_imagenes.text()
             )
             if casa.is_empty_h():
                 warn = QMessageBox().critical(self, "Datos faltantes", "Ingrese los datos necesarios")
@@ -119,7 +120,8 @@ class MainWindow(QMainWindow):
                 self.ui.cb_amueblado.currentText(),
                 self.ui.cb_habitado.currentText(),
                 self.ui.le_precio_ars.text(),
-                self.ui.le_precio_uds.text()
+                self.ui.le_precio_uds.text(),
+                self.ui.le_imagenes.text()
             )
 
             if departamento.is_empty_f():

@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1405</width>
+    <width>1502</width>
     <height>498</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1405</width>
+    <width>1502</width>
     <height>498</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1405</width>
+    <width>1502</width>
     <height>498</height>
    </size>
   </property>
@@ -31,7 +31,7 @@
      <rect>
       <x>180</x>
       <y>0</y>
-      <width>1211</width>
+      <width>1311</width>
       <height>471</height>
      </rect>
     </property>
@@ -98,6 +98,11 @@
          <string>Precio UDS</string>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>Imagenes</string>
+        </property>
+       </column>
       </widget>
      </item>
      <item>
@@ -157,6 +162,11 @@
          <string>Precio UDS</string>
         </property>
        </column>
+       <column>
+        <property name="text">
+         <string>Imagenes</string>
+        </property>
+       </column>
       </widget>
      </item>
     </layout>
@@ -191,12 +201,19 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>350</y>
+      <y>340</y>
       <width>171</width>
-      <height>121</height>
+      <height>131</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string>Buscar en Internet</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="pushButton_2">
        <property name="text">
@@ -233,7 +250,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1405</width>
+     <width>1502</width>
      <height>22</height>
     </rect>
    </property>
@@ -321,8 +338,8 @@
    <slot>alquilar_propiedad_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>127</x>
-     <y>416</y>
+     <x>128</x>
+     <y>437</y>
     </hint>
     <hint type="destinationlabel">
      <x>158</x>
@@ -337,8 +354,8 @@
    <slot>eliminar_propiedad_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>59</x>
-     <y>379</y>
+     <x>60</x>
+     <y>410</y>
     </hint>
     <hint type="destinationlabel">
      <x>11</x>
@@ -353,8 +370,8 @@
    <slot>ver_alquilados_slot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>146</x>
-     <y>442</y>
+     <x>147</x>
+     <y>464</y>
     </hint>
     <hint type="destinationlabel">
      <x>171</x>
@@ -458,6 +475,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>Lista</receiver>
+   <slot>buscar_internet_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>volver_slot()</slot>
@@ -472,5 +505,6 @@
   <slot>por_metros_cuadrados()</slot>
   <slot>por_dormitorios()</slot>
   <slot>por_precio()</slot>
+  <slot>buscar_internet_slot()</slot>
  </slots>
 </ui>

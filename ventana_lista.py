@@ -54,6 +54,11 @@ class ListWindow(QMainWindow):
 
         self.base_de_datos.delete(ids)
 
+
+    @Slot()
+    def ver_alquilados_slot(self):
+        self.hire_window.show()
+
     def refresh(self, inmuebles):
         self.ui.tb_casas.setRowCount(0)
         self.ui.tb_departamentos.setRowCount(0)

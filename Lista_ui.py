@@ -93,7 +93,7 @@ class Ui_Lista(object):
 
         self.verticalLayoutWidget_2 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(20, 0, 131, 371))
+        self.verticalLayoutWidget_2.setGeometry(QRect(20, 0, 139, 371))
         self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -107,21 +107,39 @@ class Ui_Lista(object):
 
         self.verticalLayout_2.addWidget(self.lb_casas)
 
-        self.pb_volver = QPushButton(self.centralwidget)
-        self.pb_volver.setObjectName(u"pb_volver")
-        self.pb_volver.setGeometry(QRect(18, 440, 141, 25))
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(18, 410, 141, 25))
-        self.pushButton_2 = QPushButton(self.centralwidget)
+        self.verticalLayoutWidget_3 = QWidget(self.centralwidget)
+        self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
+        self.verticalLayoutWidget_3.setGeometry(QRect(0, 350, 171, 121))
+        self.verticalLayout_3 = QVBoxLayout(self.verticalLayoutWidget_3)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_2 = QPushButton(self.verticalLayoutWidget_3)
         self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(18, 380, 141, 25))
+
+        self.verticalLayout_3.addWidget(self.pushButton_2)
+
+        self.pushButton = QPushButton(self.verticalLayoutWidget_3)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.verticalLayout_3.addWidget(self.pushButton)
+
+        self.pushButton_3 = QPushButton(self.verticalLayoutWidget_3)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+
+        self.verticalLayout_3.addWidget(self.pushButton_3)
+
+        self.pb_volver = QPushButton(self.verticalLayoutWidget_3)
+        self.pb_volver.setObjectName(u"pb_volver")
+
+        self.verticalLayout_3.addWidget(self.pb_volver)
+
         Lista.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(Lista)
         self.pb_volver.clicked.connect(Lista.volver_slot)
         self.pushButton.clicked.connect(Lista.alquilar_propiedad_slot)
         self.pushButton_2.clicked.connect(Lista.eliminar_propiedad_slot)
+        self.pushButton_3.clicked.connect(Lista.ver_alquilados_slot)
 
         QMetaObject.connectSlotsByName(Lista)
     # setupUi
@@ -176,8 +194,9 @@ class Ui_Lista(object):
         ___qtablewidgetitem22.setText(QCoreApplication.translate("Lista", u"Precio UDS", None));
         self.lb_departamentos.setText(QCoreApplication.translate("Lista", u"Departamentos", None))
         self.lb_casas.setText(QCoreApplication.translate("Lista", u"Casas", None))
-        self.pb_volver.setText(QCoreApplication.translate("Lista", u"Volver", None))
-        self.pushButton.setText(QCoreApplication.translate("Lista", u"Alquilar Propiedad", None))
         self.pushButton_2.setText(QCoreApplication.translate("Lista", u"Eliminar Propiedad", None))
+        self.pushButton.setText(QCoreApplication.translate("Lista", u"Alquilar Propiedad", None))
+        self.pushButton_3.setText(QCoreApplication.translate("Lista", u"Ver Alquiladas", None))
+        self.pb_volver.setText(QCoreApplication.translate("Lista", u"Volver", None))
     # retranslateUi
 

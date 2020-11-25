@@ -60,7 +60,6 @@ class ListWindow(QMainWindow):
 
         self.base_de_datos.delete(ids)
 
-
     @Slot()
     def ver_alquilados_slot(self):
         self.hire_window.show()

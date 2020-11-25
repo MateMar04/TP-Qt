@@ -88,7 +88,6 @@ class HireWindow(QMainWindow):
         if self.isHidden():
             self.show()
 
-
     def refresh(self, inmuebles):
         self.ui.tb_casas.setRowCount(0)
         self.ui.tb_departamentos.setRowCount(0)

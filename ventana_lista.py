@@ -1,5 +1,5 @@
 from PySide2 import QtWidgets
-from PySide2.QtWidgets import QMainWindow
+from PySide2.QtWidgets import QMainWindow, QMessageBox
 from PySide2.QtCore import Slot
 
 from Casa import Casa
@@ -7,6 +7,7 @@ from Lista_ui import Ui_Lista
 from ventana_alquiler import HireWindow
 
 from selenium import webdriver
+import validators
 
 
 class ListWindow(QMainWindow):
@@ -17,6 +18,7 @@ class ListWindow(QMainWindow):
         self.ui = Ui_Lista()
         self.ui.setupUi(self)
         self.hire_window = HireWindow(base_de_datos)
+
         self.ordenado_por_id = False
         self.ordenado_por_cp = False
         self.ordenado_por_nro_ambientes = False
@@ -64,7 +66,7 @@ class ListWindow(QMainWindow):
 
     @Slot()
     def ver_alquilados_slot(self):
-        self.hire_window.show()
+        self.hire_window.mostrar()
 
     @Slot()
     def por_id(self):
@@ -98,7 +100,29 @@ class ListWindow(QMainWindow):
 
     @Slot()
     def buscar_internet_slot(self):
-        pass
+        selected_house = self.ui.tb_casas.selectedItems()
+        selected_flat = self.ui.tb_departamentos.selectedItems()
+        links = []
+
+        for i in range(len(selected_house)):
+            house_row = selected_house[i].row()
+            links.append(self.ui.tb_casas.item(house_row, 11).text())
+
+        for i in range(len(selected_flat)):
+            flat_row = selected_flat[i].row()
+            links.append(self.ui.tb_departamentos.item(flat_row, 12).text())
+
+        URLs = list(filter(lambda l: validators.url(l), links))
+
+        if len(URLs) == 0:
+            QMessageBox().critical(self, "URL no valida", "Las URLs no son validas")
+        else:
+            driver = webdriver.Chrome("./chromedriver")
+            for i in range(len(URLs)):
+                driver.get(URLs[i])
+                if i < (len(URLs) - 1):
+                    driver.execute_script("window.open('');")
+                    driver.switch_to.window(driver.window_handles[i + 1])
 
     def refresh(self, inmuebles):
         self.ui.tb_casas.setRowCount(0)
